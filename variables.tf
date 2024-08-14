@@ -1,4 +1,4 @@
-variable "project_id" {}
+# variable "project_id" {} funcionalidad para ejecución automatizada con pipeline en gitlab
 variable "db_username" {}
 variable "db_password" {}
 variable "database_port" {}

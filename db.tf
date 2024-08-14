@@ -8,7 +8,7 @@ resource "aws_db_instance" "default" {
   db_name = "mydb"
   engine = "mysql"
   engine_version = "8.0"
-  instance_class = "db.t2.micro"
+  instance_class = "db.t3.micro"
   username = var.db_username
   password = var.db_password
   parameter_group_name = "default.mysql8.0"
@@ -22,7 +22,10 @@ resource "aws_db_instance" "default" {
 
 resource "aws_db_subnet_group" "my_db_subnet" {
   name = "my_db_subnet_group"
-  subnet_ids = [var.subnet_id]
+  subnet_ids = [
+    var.subnet_id,
+    aws_subnet.subnet_2.id
+    ]
 
   tags = {
     Name = "My DB Subnet Group"
