@@ -10,6 +10,8 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL8Dialect
 ```
+- **`spring.datasource.url`**: Aquí debes colocar el endpoint de tu base de datos RDS. (donde dice "mydb"(despues de "3306/") cambiarlo por el valor que le hayas asigando a la propiedad "identifier" a la base de datos RDS en el archivo db.tf)
+- **`spring.datasource.username`** y **`spring.datasource.password`**: configurar con los valores de username y password de la base de datos RDS.
 
 Configuración de dependencia de MySQL en pom.xml:
 
@@ -20,9 +22,6 @@ Configuración de dependencia de MySQL en pom.xml:
 	<version>8.0.33</version>
 </dependency>
 ```
-
-- **`spring.datasource.url`**: Aquí debes colocar el endpoint de tu base de datos RDS. (donde dice "mydb"(despues de "3306/") cambiarlo por el valor que le hayas asigando a la propiedad "identifier" a la base de datos RDS en el archivo db.tf)
-- **`spring.datasource.username`** y **`spring.datasource.password`**: configurar con los valores de username y password de la base de datos RDS.
 
 ### Configuración de valores de variables de terraform:
 
